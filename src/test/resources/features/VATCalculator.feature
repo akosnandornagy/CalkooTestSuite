@@ -45,3 +45,17 @@ Feature: VAT Calculator Functionality Validation
     And I select a VAT rate "19%"
     When I enter a Net amount of "100.123"
     Then An error message should be displayed "Amount should have maximum 2 decimal places"
+
+  Scenario: Validate 9-digit limit for Net input field
+    Given I select "Germany" from the country dropdown
+    And I select a VAT rate "19%"
+    And I select "Price without VAT" input field
+    When I enter a Net amount of "1000000000"
+    Then An error message should be displayed "Amount should not exceed 9 digits"
+
+  Scenario: Validate negative input values for Net input field
+    Given I select "Germany" from the country dropdown
+    And I select a VAT rate "19%"
+    And I select "Price without VAT" input field
+    When I enter a Net amount of "-100"
+    Then An error message should be displayed "Negative amounts are not allowed"
