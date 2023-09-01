@@ -66,6 +66,19 @@ Automated test cases cover various aspects of the VAT calculator's functionality
 
 These test cases aim to cover all aspects of the user story and acceptance criteria, ensuring that the VAT calculator behaves as expected.
 
+## Test Run Example
+
+![Test Run Screenshot](./images/test_run_screenshot.png)
+
+## Test Reports
+
+The test runner is configured to automatically generate two types of reports after each test run:
+
+1. An HTML report that can be found in the `target/cucumber-reports` directory.
+2. A JSON report that can be found in the `target/` directory, named `cucumber.json`.
+
+These reports provide a detailed view of the test execution results.
+
 ## Questions Regarding Requirements/Acceptance Criteria
 
 1. **API Testing**: The project currently focuses on testing through the web interface. Is there a requirement or plan to include API testing? If so, could you please provide the API endpoint?
