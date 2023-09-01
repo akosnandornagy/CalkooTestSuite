@@ -85,6 +85,10 @@ These reports provide a detailed view of the test execution results.
 2. **Error Message for Negative Amounts**: The web interface does show an error message in the pie chart section when negative amounts are entered. Is this considered sufficient, or should there be a more explicit error message next to the input field?
 3. **9-Digit Limit**: The web interface restricts users from entering more than 9 digits but does not display an error message. Is this behavior considered acceptable according to the acceptance criteria?
 
+## Issues and Bugs
+
+For a list of known issues and bugs, please refer to the [Issues section of the repository](https://github.com/akosnandornagy/CalkooTestSuite/issues).
+
 ## Contact Information
 
 dr. Nándor Ákos Nagy - akos.nandor.nagy@gmail.com  
