@@ -56,17 +56,17 @@ public class VatCalculatorSteps {
         vatCalculatorPage.selectInputType(inputType);
     }
 
-    @Given("I enter a Net amount of {string}")
+    @When("I enter a Net amount of {string}")
     public void i_enter_a_Net_amount_of(String netAmount) {
         vatCalculatorPage.enterNetAmount(netAmount);
     }
 
-    @And("I enter a VAT amount of {string}")
+    @When("I enter a VAT amount of {string}")
     public void i_Enter_A_VAT_Amount_Of(String vatAmount) {
         vatCalculatorPage.enterVatAmount(vatAmount);
     }
 
-    @And("I enter a Gross amount of {string}")
+    @When("I enter a Gross amount of {string}")
     public void i_Enter_A_Gross_Amount_Of(String grossAmount) {
         vatCalculatorPage.enterGrossAmount(grossAmount);
     }

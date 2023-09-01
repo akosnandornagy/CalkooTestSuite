@@ -18,7 +18,7 @@ Feature: VAT Calculator Functionality Validation
     Given I select "Germany" from the country dropdown
     And I select a VAT rate "19%"
     And I select "Price without VAT" input field
-    And I enter a Net amount of "100"
+    When I enter a Net amount of "100"
     Then The VAT amount should be "19.00"
     And The Gross amount should be "119.00"
 
@@ -26,7 +26,7 @@ Feature: VAT Calculator Functionality Validation
     Given I select "Germany" from the country dropdown
     And I select a VAT rate "7%"
     And I select "Value-Added Tax" input field
-    And I enter a VAT amount of "7"
+    When I enter a VAT amount of "7"
     Then The Net amount should be "100.00"
     And The Gross amount should be "107.00"
 
@@ -34,7 +34,7 @@ Feature: VAT Calculator Functionality Validation
     Given I select "Hungary" from the country dropdown
     And I select a VAT rate "5%"
     And I select "Price incl. VAT" input field
-    And I enter a Gross amount of "105"
+    When I enter a Gross amount of "105"
     Then The Net amount should be "100.00"
     And The VAT amount should be "5.00"
 
