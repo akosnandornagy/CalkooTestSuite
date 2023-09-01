@@ -4,12 +4,16 @@ import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 public class CalkooVatCalculatorPage extends BasePage {
+    @FindBy(css = ".fc-button.fc-cta-do-not-consent.fc-secondary-button")
+    private WebElement doNotConsentButton;
+
     @FindBy(name = "Country")
     private WebElement countryDropdown;
 
@@ -31,6 +35,17 @@ public class CalkooVatCalculatorPage extends BasePage {
     // There is no error message element in tha page 👇👇👇
     @FindBy(id = "errorMessageElementID")
     private WebElement errorMessage;
+
+    public void clickDoNotConsentButton() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(doNotConsentButton));
+            if (doNotConsentButton.isDisplayed()) {
+                doNotConsentButton.click();
+            }
+        } catch (TimeoutException e) {
+            System.out.println("Consent modal did not appear, proceeding...");
+        }
+    }
 
     public void navigateToVatCalculatorPage() {
         driver.get(baseUrl + "/vat-calculator");

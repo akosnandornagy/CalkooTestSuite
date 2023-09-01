@@ -19,6 +19,13 @@ public class VatCalculatorSteps {
         vatCalculatorPage.navigateToVatCalculatorPage();
     }
 
+    @And("I click the {string} button")
+    public void i_Click_The_Button(String buttonName) {
+        if (buttonName.equals("Do not consent")) {
+            vatCalculatorPage.clickDoNotConsentButton();
+        }
+    }
+
     @Then("I should see the country dropdown")
     public void i_should_see_the_country_dropdown() {
         assertTrue("Country dropdown should be visible", vatCalculatorPage.isCountryDropdownVisible());
@@ -88,4 +95,5 @@ public class VatCalculatorSteps {
             assertEquals("The error message should match", expectedErrorMessage, actualErrorMessage);
         }
     }
+
 }

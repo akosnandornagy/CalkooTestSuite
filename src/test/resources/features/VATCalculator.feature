@@ -2,6 +2,7 @@ Feature: VAT Calculator Functionality Validation
 
   Background:
     Given I navigate to the VAT Calculator page
+    And I click the "Do not consent" button
 
   Scenario: Validate the presence of country dropdown
     Then I should see the country dropdown
@@ -12,9 +13,6 @@ Feature: VAT Calculator Functionality Validation
 
   Scenario: Validate if input field labels are clickable
     Then I should see that all input field labels are clickable
-
-  Scenario: Validate if input field label "Value-Added Tax" is clickable
-    Then I select "Value-Added Tax" input field
 
   Scenario: Validate the correct VAT and Gross calculations based on Net
     Given I select "Germany" from the country dropdown
